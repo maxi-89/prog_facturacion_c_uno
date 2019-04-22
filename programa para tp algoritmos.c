@@ -66,7 +66,7 @@ do{
 		system("color 6");
 		printf("\n\n\t\t BIENVENIDO AL SISTEMA\n ");
 		printf("\n\t\t MENU "); 
-		printf("\n1-VENTAS\n2-COMPRAS\n3-STOCK\n4-CLIENTES\n5-PROVEEDORES\n6-ESTADISTICAS\n0-SALIR");
+		printf("\n1-VENTAS\n2-COMPRAS\n3-STOCK\n4-PROVEEDORES\n5-ESTADISTICAS\n0-SALIR");
 	}
 	else  {
 		system("cls");
