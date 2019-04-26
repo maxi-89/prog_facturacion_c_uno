@@ -5,6 +5,8 @@
 #include<time.h>
 #include <locale.h>
 
+
+
 void encabezado(){
 	
 	printf("\n====================================================\n\n");
@@ -17,7 +19,10 @@ void encabezado(){
    time_t hora;
    time(&hora);
    outtime=localtime(&hora);
+ 
    printf("%.19s \n", asctime(outtime));
+ 
+ 
 	printf("====================================================");
 }
 
@@ -35,7 +40,7 @@ void encabezado(){
 	
 do{
         system("cls");
-		printf("\t\t \n INICIO DE SESION\n\n\n");	
+        printf("\t\t \n INICIO DE SESION\n\n\n");	
 		printf("usuario: ");
 		fflush(stdin);
 		scanf("%s", &usuario_u);
@@ -66,7 +71,7 @@ do{
 		system("color 6");
 		printf("\n\n\t\t BIENVENIDO AL SISTEMA\n ");
 		printf("\n\t\t MENU "); 
-		printf("\n1-VENTAS\n2-COMPRAS\n3-STOCK\n4-PROVEEDORES\n5-ESTADISTICAS\n0-SALIR");
+		printf("\n1-VENTAS\n2-COMPRAS\n3-STOCK\n4-PROVEEDORES\n\n0-SALIR");
 	}
 	else  {
 		system("cls");
@@ -99,15 +104,8 @@ do{
 		break;
 		
 		case 4:
-				printf("CLIENTES");
-		break;
-		
-		case 5:
-				printf("PROVEDORES");
-		break;
-		
-		case 6:
-				printf("ESTADISTICAS");
+				printf("PROVEEDORES");
+				
 		break;
 		
 		default:
