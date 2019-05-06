@@ -1,0 +1,98 @@
+#include<stdio.h>
+#include<conio.h>
+
+main()
+{
+	int i,opcion,cant_vendida,cantidad_producto[5],cod_de_producto;
+	float precio_producto[5],p_prod_proveedor[5];
+	char n_de_producto[5][15],n_de_proveedor[5][15],n_prod_proveedor[5][15]; 
+	for(i=0;i<5;i++){
+		printf("Ingrese productos\n\n");
+		printf("Nombre de producto: ");
+		fflush(stdin);
+		gets(n_de_producto[i]);
+		printf("Precio de producto: ");
+		scanf("%f",&precio_producto[i]);
+		printf("Cantidad: ");
+		scanf("%i",&cantidad_producto[i]);
+		system("cls");
+	}
+	for(i=0;i<5;i++){
+		printf("Ingrese Proveedores\n\n");
+		printf("Nombre de proveedor: ");
+		fflush(stdin);
+		gets(n_de_proveedor[i]);
+		printf("Nombre de producto: ");
+		fflush(stdin);
+		gets(n_prod_proveedor[i]);
+		printf("Precio de producto: ");
+		scanf("%f",&p_prod_proveedor[i]);
+		system("cls");
+	}	
+	do{
+			printf("Ingrese la opcion deseada:\n");
+			printf("--------------------------------------\n");
+			printf("1-Ventas\n");
+			printf("2-Proveedores\n");
+			printf("3-Stock\n");
+			printf("0-Salir\n");
+			printf("Opcion: ");
+			scanf("%i",&opcion);
+		}while((opcion<0)||(opcion>3));
+	
+	while(opcion!=0){
+		switch(opcion){
+			case 1: //ventas
+				printf("Ingrese codigo de producto: ");
+				scanf("%i",&cod_de_producto);				
+				printf("Ingrese cantidad: ");
+				scanf("%i",&cant_vendida);
+				for(i=0;i<5;i++){
+					if(cod_de_producto==i){
+						if(cantidad_producto[i]>cant_vendida){
+							cantidad_producto[i]=cantidad_producto[i]-cant_vendida;
+						}
+						else{
+							printf("Error!!! no hay suficientes %s",n_de_producto[i]);
+						}							
+							
+					}
+				}
+				getch();
+				system("cls");
+				break;
+			case 2: //proveedores
+				printf("Proveedores \n");
+				printf("Nombre \t\t Producto \t\t Precio\n");
+				for(i=0;i<5;i++)
+				{								
+				printf("%s\t\t %s \t\t %f\n",n_de_proveedor[i],n_prod_proveedor[i],p_prod_proveedor[i]);						
+				}
+				getch();
+				system("cls");
+				break;
+			case 3: //stock
+				printf("Los productos \n");
+				printf("Nombre de producto \t Cantidad\n");
+				for(i=0;i<5;i++)
+				{								
+					printf("%s \t\t %i\n",n_de_producto[i],cantidad_producto[i]);	
+				}				
+				getch();
+				system("cls");
+				break;					
+				
+		}
+		do{
+			printf("Ingrese la opcion deseada:\n");
+			printf("--------------------------------------\n");
+			printf("1-Ventas\n");
+			printf("2-Proveedores\n");
+			printf("3-Stock\n");
+			printf("0-Salir\n");
+			printf("Opcion: ");
+			scanf("%i",&opcion);
+		}while((opcion<0)||(opcion>3));
+	}
+
+}
