@@ -71,7 +71,10 @@ main()
 				}				
 				getch();
 				system("cls");
-				break;					
+				break;
+			case 4: //facturacion
+				printf("Lo total facturado hasta el momento es: %f",total);
+			break;	
 				
 		}//cierra switch
 		total=total+venta;
